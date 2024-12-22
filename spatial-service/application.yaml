@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/PandhuWibowo/apps-manifest.git
+    repoURL: https://raw.githubusercontent.com/PandhuWibowo/apps-manifest/main/spatial-service
     targetRevision: 0.1.0
     chart: spatial-service
     helm:
