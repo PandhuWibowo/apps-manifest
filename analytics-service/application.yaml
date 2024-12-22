@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/PandhuWibowo/apps-manifest.git
     targetRevision: HEAD
-    path: ./app-deployment/analytics-service
+    path: analytics-service
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: analytics
