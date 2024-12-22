@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/PandhuWibowo/apps-manifest.git
     targetRevision: main
-    path: spatial-service/charts
+    chart: app-deployment/spatial-service
     helm:
       valueFiles:
         - values.yaml
