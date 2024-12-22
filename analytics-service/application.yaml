@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/PandhuWibowo/apps-manifest.git
-    targetRevision: HEAD
+    targetRevision: main
     path: analytics-service
   destination:
     server: 'https://kubernetes.default.svc'
