@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/PandhuWibowo/python-service.git
+    repoURL: https://github.com/PandhuWibowo/apps-manifest.git
     path: ./app-deployment/analytics-service
   destination:
     server: 'https://kubernetes.default.svc'
