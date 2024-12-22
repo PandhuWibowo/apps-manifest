@@ -6,27 +6,17 @@ metadata:
 spec:
   project: default
   source:
-    path: spatial-service
-    repoURL: https://github.com/PandhuWibowo/apps-manifest.git  # Replace with your Helm chart repository URL
-    targetRevision: HEAD               # Replace with your desired chart version or use "latest"
+    repoURL: https://github.com/PandhuWibowo/apps-manifest.git
+    targetRevision: main
+    path: charts
     helm:
-      values: |-
-        replicaCount: 1
-        image:
-          repository: operationtoolsgeneralbvarta.azurecr.io/analytics-service
-          pullPolicy: IfNotPresent
-          tag: "latest"
-        service:
-          type: LoadBalancer
-          port: 80
-          targetPort: 9000
-        resources:
-          requests:
-            cpu: 100m
-            memory: 128Mi
-          limits:
-            cpu: 200m
-            memory: 256Mi
+      valueFiles:
+        - values.yaml
+      parameters:
+        - name: image.repository
+          value: "operationtoolsgeneralbvarta.azurecr.io/analytics-service"
+        - name: image.tag
+          value: "latest"
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: analytics
