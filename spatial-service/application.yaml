@@ -1,0 +1,38 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: spatial-service
+  namespace: argocd
+spec:
+  project: default
+  source:
+    path: spatial-service
+    repoURL: https://github.com/PandhuWibowo/apps-manifest.git  # Replace with your Helm chart repository URL
+    targetRevision: 1.0.0               # Replace with your desired chart version or use "latest"
+    helm:
+      values: |-
+        replicaCount: 1
+        image:
+          repository: operationtoolsgeneralbvarta.azurecr.io/analytics-service
+          pullPolicy: IfNotPresent
+          tag: "latest"
+        service:
+          type: LoadBalancer
+          port: 80
+          targetPort: 9000
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 200m
+            memory: 256Mi
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: analytics
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
