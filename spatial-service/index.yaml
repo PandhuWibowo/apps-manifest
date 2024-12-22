@@ -3,7 +3,7 @@ entries:
   spatial-service:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-12-23T03:42:06.526585+07:00"
+    created: "2024-12-23T03:49:28.815641+07:00"
     description: A Helm chart for Kubernetes
     digest: 621c7d5fbe34d322fc680264e67f3700b4a0f4c09579c6e9bbac19f33810ae9f
     name: spatial-service
@@ -11,4 +11,4 @@ entries:
     urls:
     - https://raw.githubusercontent.com/PandhuWibowo/apps-manifest/main/spatial-service/spatial-service-0.1.0.tgz
     version: 0.1.0
-generated: "2024-12-23T03:42:06.523072+07:00"
+generated: "2024-12-23T03:49:28.811823+07:00"

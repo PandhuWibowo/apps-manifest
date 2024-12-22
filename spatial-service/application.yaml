@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://raw.githubusercontent.com/PandhuWibowo/apps-manifest/main/spatial-service
-    targetRevision: main
+    targetRevision: 0.1.0
     chart: spatial-service
     helm:
       valueFiles:
