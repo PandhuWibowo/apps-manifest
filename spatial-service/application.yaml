@@ -8,7 +8,7 @@ spec:
   source:
     path: spatial-service
     repoURL: https://github.com/PandhuWibowo/apps-manifest.git  # Replace with your Helm chart repository URL
-    targetRevision: 1.0.0               # Replace with your desired chart version or use "latest"
+    targetRevision: HEAD               # Replace with your desired chart version or use "latest"
     helm:
       values: |-
         replicaCount: 1
