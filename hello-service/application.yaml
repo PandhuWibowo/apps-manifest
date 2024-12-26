@@ -1,3 +1,24 @@
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: hello-service
+#   namespace: argocd
+# spec:
+#   project: default
+#   source:
+#     repoURL: https://github.com/PandhuWibowo/apps-manifest.git
+#     targetRevision: main
+#     path: hello-service
+#   destination:
+#     server: 'https://kubernetes.default.svc'
+#     namespace: analytics
+#   syncPolicy:
+#     syncOptions:
+#     - CreateNamespace=true
+#     automated:
+#       prune: true
+#       selfHeal: true
+
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -9,12 +30,15 @@ spec:
     repoURL: https://github.com/PandhuWibowo/apps-manifest.git
     targetRevision: main
     path: hello-service
+    helm:
+      valueFiles:
+        - values-dev.yaml  # Ensure the correct values file is being used here
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: analytics
   syncPolicy:
     syncOptions:
-    - CreateNamespace=true
+      - CreateNamespace=true
     automated:
       prune: true
       selfHeal: true

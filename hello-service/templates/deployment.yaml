@@ -18,7 +18,7 @@ spec:
       containers:
         - name: hello-service
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"  # Use Helm placeholders
-          imagePullPolicy: {{ .Values.image.pullPolicy | default "Always" }}  # Use Helm to set policy
+          imagePullPolicy: "{{ .Values.image.pullPolicy | default 'Always' }}"
           ports:
             - containerPort: 9000
           resources:
