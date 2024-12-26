@@ -17,8 +17,8 @@ spec:
     spec:
       containers:
         - name: hello-service
-          image: operationtoolsgeneralbvarta.azurecr.io/hello-service:latest
-          imagePullPolicy: Always
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"  # Use Helm placeholders
+          imagePullPolicy: {{ .Values.image.pullPolicy | default "Always" }}  # Use Helm to set policy
           ports:
             - containerPort: 9000
           resources:
