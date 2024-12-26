@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: hello-service
-          image: operationtoolsgeneralbvarta.azurecr.io/hello-service:latest
+          image: operationtoolsgeneralbvarta.azurecr.io/hello-service:main
           ports:
             - containerPort: 9000
           resources:
