@@ -28,7 +28,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/PandhuWibowo/apps-manifest.git
-    targetRevision: main
+    targetRevision: HEAD
     path: hello-service
     helm:
       valueFiles:
