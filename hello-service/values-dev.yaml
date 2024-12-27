@@ -2,7 +2,7 @@ replicaCount: 1
 image:
   repository: operationtoolsgeneralbvarta.azurecr.io/hello-service
   pullPolicy: Always
-  tag: latest
+  tag: bb93104fdd1d76f13aeae1f608bbe157c108c6a9
 imagePullSecrets: []
 nameOverride: ''
 fullnameOverride: ''
