@@ -4,7 +4,7 @@ metadata:
   name: spatial-service-service
   namespace: analytics
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: spatial-service
   ports:

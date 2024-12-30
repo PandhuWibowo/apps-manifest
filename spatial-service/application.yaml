@@ -6,19 +6,14 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://raw.githubusercontent.com/PandhuWibowo/apps-manifest/main/spatial-service
-    targetRevision: 0.1.0
-    chart: spatial-service
+    repoURL: https://github.com/PandhuWibowo/apps-manifest.git
+    targetRevision: HEAD
+    path: spatial-service
     helm:
       valueFiles:
-        - values.yaml
-      parameters:
-        - name: image.repository
-          value: "operationtoolsgeneralbvarta.azurecr.io/analytics-service"
-        - name: image.tag
-          value: "latest"
+        - values-dev.yaml  # Ensure the correct values file is being used here
   destination:
-    server: 'https://kubernetes.default.svc'
+    server: 'https://nonprod-global-oq8qkdbr.hcp.southeastasia.azmk8s.io:443'
     namespace: analytics
   syncPolicy:
     syncOptions:

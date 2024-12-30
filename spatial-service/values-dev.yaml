@@ -5,9 +5,9 @@
 replicaCount: 1
 
 image:
-  repository: operationtoolsgeneralbvarta.azurecr.io/analytics-service
-  pullPolicy: IfNotPresent
-  tag: "latest"
+  repository: nonprodglobal.azurecr.io/hello-service
+  pullPolicy: Always
+  tag: 8d6319454e83dcca006e1b5530b2635ebcee0801
 
 imagePullSecrets: []
 nameOverride: ""

@@ -17,9 +17,8 @@ spec:
     spec:
       containers:
         - name: spatial-service
-          image: operationtoolsgeneralbvarta.azurecr.io/analytics-service:latest
-          ports:
-            - containerPort: 9000
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"  # Use Helm placeholders
+          imagePullPolicy: Always
           resources:
             requests:
               cpu: 100m
